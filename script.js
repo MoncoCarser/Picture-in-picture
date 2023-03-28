@@ -6,9 +6,9 @@ async function selectMediaStream() {
 	try {
 		const mediaStream = await navigator.mediaDevices.getDisplayMedia();
 		videoElement.srcObject = mediaStream;
-		videoElement.onLoadedmetadata = () => {
+		videoElement.onloadedmetadata = () => {
 			videoElement.play();
-		}
+		};
 	} catch (error) {
 		// Catch errors
 		console.log("whoos, error here:", error)
@@ -26,3 +26,4 @@ button.addEventListener("click", async () => {
 
 // On load
 selectMediaStream();
+
